@@ -3,8 +3,8 @@
 # 2. School if the number is divisible by 5
 # 3. Strive School if the number is divisible by 3 and 5
 # 4. The same number otherwise (if the number is not divisible neither by 3 and neither by 5)
-import numpy as np
-x=np.array([5,3,15])
+
+x=[1,2,3,4,5,6,7,8,9,10,15]
 def print_results(x):
     for num in x:
 
