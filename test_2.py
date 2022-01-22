@@ -18,23 +18,23 @@
 
 
 
-x=[[1, 2], [1, 3], [2, 3]]
-
-def findspy(x):
-    length=len(x)
-    for i in range(length):
-        exit=0
-        for j in range(length):
-            if(i!=j):
-                if(x[i][0]==x[j][1]):
-                    exit=1
-                    break
-        if(not exit):
-            return x[i][0]
+def findSpy(n, pairs):
+    if n<=0:
+        return -1
+    incorrectpairs = [1 for pair in pairs if len(pair)!=2]
+    if len(incorrectpairs)>0:
+        return -1
+    nonSpies = set([i[1] for i in pairs])
+    countDict = {i:0 for i in range(1,n+1) if i not in nonSpies}
+    for pair in pairs:
+        if pair[0] not in nonSpies:
+            countDict[pair[0]] += 1
+    for key, count in countDict.items():
+        if count == n-1:
+            return key
     return 0
 
-    
-findspy(x)                    
+findSpy(3, [[1, 2], [1,3], [2,3], [3,1]])                    
 
     
 
