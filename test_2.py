@@ -15,26 +15,36 @@
 #  - 0 if there isn't a spy ([[1, 2], [1,3], [2,3], [3,1]] -> return 0)
 #  - if the number of the people is less or equals to 0, or the length of the list is grater than the number of the people or if the length of the pair is not 2 -> return -1 
 
-
-
-
-def findSpy(n, pairs):
-    if n<=0:
+list1=[]
+list2=[]
+y=[[1, 2], [1, 3], [2, 3]]
+x=1,2,3
+def findSpy(x,y):
+    if len(x)<=0:
         return -1
-    incorrectpairs = [1 for pair in pairs if len(pair)!=2]
-    if len(incorrectpairs)>0:
+    diff=[pair for pair in y if len(pair)!=2]
+    if len(diff)>0:
         return -1
-    nonSpies = set([i[1] for i in pairs])
-    countDict = {i:0 for i in range(1,n+1) if i not in nonSpies}
-    for pair in pairs:
-        if pair[0] not in nonSpies:
-            countDict[pair[0]] += 1
-    for key, count in countDict.items():
-        if count == n-1:
-            return key
-    return 0
 
-findSpy(3, [[1, 2], [1,3], [2,3], [3,1]])                    
 
+    for i in y:
+            if i[1] in i:
+                list1.append(i[1])
+    for i in y:
+        for j in i:
+
+        
+            list2.append(j)
+                 
+    ans=[]
+    for j in list2:
+        if j not in list1:
+            ans.append(j)
+        
+           
+    ans=set(ans)
+    return ans                   
+
+findSpy(x,y)
     
 
