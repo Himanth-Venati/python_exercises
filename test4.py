@@ -17,23 +17,25 @@
 # It should return:
 # A boolean indicating it the cubes intersect
 # and the volume of the shared space, if the cubes do not intersect then this should be 0
-# I did not understand this , can you please help me with the explanation
 
-def inter(cube1,cube2,Dcube1,Dcube2):
+def inter(cube1,cube2,Dcube1,Dcube2):#cube1 and cube2 are sizes,Dcube1 and Dcube2 are 3Ddistance inspace
     T1=[]  
     for i in Dcube1:
         T1.append(i+cube1)
-    T2=[]   
+    T2=[]  
+     
     for i in Dcube2:
         T2.append(i+cube2) 
-    inter1=[]    
+    intersection=[]    
     for n in range(0,len(T2)):
-        if T2[n]>Dcube1[n]:
-            inter1.append(T2[n]-Dcube1[n])
-            True
+        if T2[n]>Dcube1[n]: #and not T2<Dcube1[n]:
+            intersection.append(T2[n]-Dcube1[n])
+            
         else:
-            print('0 intersection')    
-    return inter1    
+            return False   
+    return intersection    
      
                    
 inter(5,2,[10,10,0],[9,9,0])    
+
+#inter(5,2,[10,10,0],[7,7,0])
