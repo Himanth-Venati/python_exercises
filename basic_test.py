@@ -5,6 +5,7 @@
 # 4. The same number otherwise (if the number is not divisible neither by 3 and neither by 5)
 
 x=[1,2,3,4,5,6,7,8,9,10,15]
+
 def print_results(x):
     for num in x:
 
