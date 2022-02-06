@@ -58,4 +58,5 @@ class Intersec:
 
 inters=Intersec(5,2,10,10,0,8,9,0)   
 inters.inter()           
- 
+# inters=Intersec(5,2,10,10,0,5,5,0) 
+# inters.inter()
