@@ -39,8 +39,8 @@ class Intersec:
         Y2min=self.y2-(self.cube2/2) #for cube2 y-minimum
         Y2max=self.y2+(self.cube2/2) #for cube2 y-maximum
         Z2max=self.z2+(self.cube2/2) #for cube2 z-maximum
-        if X1min>X2max and Y1min>Y2max and Z1min>Z2max:
-            return False
+        if X1min>X2max and Y1min>Y2max:
+            return False,0
         a=[]
         if X2max>X1min:
             a.append(X2max-X1min)
